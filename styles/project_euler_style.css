@@ -1,0 +1,29 @@
+:root {
+    --rectWidth: 250px;
+    --rectHeight: 180px;
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 40% ;
+    left: 50% ;
+    transform: translate(-50%, -50%);
+}
+
+.centralRectangle {
+    position: relative;
+    border: 2px rgb(44, 192, 143) solid ;
+    background-color: rgb(215, 230, 230);
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.centralRectangle .answer {
+    color: rgb(238, 4, 4) ;
+    /* align-self: center; */
+}
