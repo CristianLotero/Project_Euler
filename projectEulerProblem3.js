@@ -11,10 +11,9 @@ let numX = 100;
     let target = num;
     let largestPrime = 2;
     for (i=2 ; i < target ; i++) {
-        for (j=2 ; j < target ; j++){
-            if (!(j%i == 0)) {
-                largestPrime = j;
-                console.log(`El numero ${largestPrime} es primo \n`)
+        for (j=2 ; j < i ; j++){
+            if ((i%j == 0)) {
+                console.log(` ${j} no es primo \n`)
             }
         }
     }
