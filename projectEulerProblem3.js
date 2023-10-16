@@ -4,17 +4,28 @@
 
 let answerDisplay = document.querySelector('.answer') ;
 
-// let numX = 600851475143
+const numX = BigInt(600851475143);
 // let numX = 13195;
-let numX = 100;
+let primosArray = [2];
 (function LargestPrime(num) {
     let target = num;
-    let largestPrime = 2;
     for (i=2 ; i < target ; i++) {
         for (j=2 ; j < i ; j++){
             if ((i%j == 0)) {
-                console.log(` ${j} no es primo \n`)
+                // console.log(` ${i} No es primo \n`)
+                break;
+            } else if (j == i -1){
+                // console.log(` ${i} Es primisimo !!!!!!!!!!!!!!!!!!!! \n`)
+                primosArray.push(i);
             }
         }
     }
+    primosArray.sort((a ,b) => b - a);
+    let largestPrime = primosArray.find(element => numX%element == 0);
+    console.log(largestPrime);
+
 })(numX);
+
+
+
+
