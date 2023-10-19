@@ -15,6 +15,7 @@ def LargestPrime(numX):
     i = 2
     j = 2
     for i in target - 1:
+        print (i)
         for j in i - 1:
             if i%j == 0:
                 break
@@ -27,9 +28,8 @@ for element in primosArray:
     if numX%element == 0:
         largestPrime = element
 
-print(largestPrime)
+print('El primo mas grande es: ', largestPrime)
 print(primosArray)
-print(numX)
 
 
 
