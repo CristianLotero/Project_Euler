@@ -2,34 +2,28 @@
 
 # What is the largest prime factor of the number 600851475143?
 
-numX = 100
-# numX = 13195
+numX = 600851475143
+hundredRange = range(101)
 
 from array import array
 primosArray = array('i')
-
 primosArray.append(2)
 
-def LargestPrime(numX):
-    target = numX
-    i = 2
-    j = 2
-    for i in target - 1:
-        print (i)
-        for j in i - 1:
+def firstsPrimeNums():
+    for i in range(2,1000001):
+        for j in range(2,1000001):
             if i%j == 0:
                 break
             elif j == i -1:
                 primosArray.append(i)
     
-    primosArray.reverse()
-    
+firstsPrimeNums()
+
 for element in primosArray:
     if numX%element == 0:
-        largestPrime = element
+        largestPrimeNum = element
 
-print('El primo mas grande es: ', largestPrime)
+
 print(primosArray)
-
-
+print("el factor numero primo mas grande de: ", numX, " es: ", largestPrimeNum)
 
