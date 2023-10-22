@@ -4,25 +4,22 @@
 
 let answerDisplay = document.querySelector('.answer') ;
 
-const numX = BigInt(600851475143);
+const numX = 600851475143;
 // let numX = 13195;
 let primosArray = [2];
 (function LargestPrime(num) {
-    let target = num;
-    for (i=2 ; i < target ; i++) {
+    for (i=2 ; i < 10000 ; i++) {
         for (j=2 ; j < i ; j++){
             if ((i%j == 0)) {
-                // console.log(` ${i} No es primo \n`)
                 break;
             } else if (j == i -1){
-                // console.log(` ${i} Es primisimo !!!!!!!!!!!!!!!!!!!! \n`)
                 primosArray.push(i);
             }
         }
     }
     primosArray.sort((a ,b) => b - a);
     let largestPrime = primosArray.find(element => numX%element == 0);
-    console.log(largestPrime);
+    console.log(`el factor primo mas grande es: ${largestPrime}`);
 
 })(numX);
 
