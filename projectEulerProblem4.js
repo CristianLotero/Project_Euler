@@ -3,25 +3,25 @@
 let result= 0;
 let resultArray;
 let resultArrayReversed;
+let largest = 0;
 
 let breakpoint = 0;
 (function palindrome3digits() {
-    for (let i=999 ; i > 99 ; i--) {
-        for (let j=999; j > 99 ; j--) {
+    for (let i=100 ; i < 1000 ; i++) {
+        for (let j=100 ; j < 1000 ; j++) {
             result = i * j;
             resultArray = result.toString().split("");
-            // resultCopy = resultArray;
             resultArrayReversed = [...resultArray].reverse();
-            console.log(`RESULTADO: ${result} de ${i} * ${j}`)
-            // console.log(`RESULT ARRAY: ${resultArray}`)
-            // console.log(`REVERSED: ${resultArrayReversed}`)
+            // console.log(`RESULTADO: ${result} de ${i} * ${j}`)
             let isEqual = resultArray.toString() === resultArrayReversed.toString();
             if (isEqual) {
-                    console.log(`El palindromo mas grande es ${resultArrayReversed} producto de ${i} * ${j}`)
-                    return;
+                    console.log(`El palindromo mas grande por ahora es ${resultArrayReversed} producto de ${i} * ${j}`)
+                    largest = resultArrayReversed * 1; 
+                    largest = largest > result ? largest : result; 
                 }
             }
         }
     })();
 
+console.log(largest)
 
