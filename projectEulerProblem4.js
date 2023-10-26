@@ -16,7 +16,8 @@ let breakpoint = 0;
             let isEqual = resultArray.toString() === resultArrayReversed.toString();
             if (isEqual) {
                     console.log(`El palindromo mas grande por ahora es ${resultArrayReversed} producto de ${i} * ${j}`)
-                    largest = resultArrayReversed * 1; 
+                    largest = resultArrayReversed.toString() * 1; 
+                    console.log(largest)
                     largest = largest > result ? largest : result; 
                 }
             }
