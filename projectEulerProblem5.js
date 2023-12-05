@@ -4,5 +4,5 @@
 //  to 20?
 
 function pretentiousNumber (start, end) {
-    let pretentious = 
+    let pretentious = 0;
 }
