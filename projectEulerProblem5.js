@@ -14,7 +14,6 @@ console.log(divisorsArray);
 
 
 function pretentiousNumber () {
-    
     for (i = 10 ; i < 1000000000; i++) {
         if(divisorsArray.every((el)=> i % el === 0 )) {
             console.log(`El numero ${i} es divisible por todos`);
