@@ -4,3 +4,17 @@
 //              (1 + 2 + ... + 10)² = 55² = 3025.
 // Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
 // Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+let arrSumSquare = [];
+let arrSquareSum = [];
+
+function sumSquarePush () {
+    for(i=1 ; i <= 10 ; i++) {
+        arrSumSquare.push(i**2)
+    }
+    console.log(arrSumSquare)
+    console.log()
+}
+function difSumSquares () {
+
+}
