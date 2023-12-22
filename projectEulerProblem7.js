@@ -2,8 +2,14 @@
 // What is the 10001st prime number?
 
 let aPrimeArray = [];
+let nNPrimeIndex = 0;
+
+console.log(typeof(nNPrimeIndex))
 
 
 function fParsePrimes () {
-    
+    let nCheckIfXIsPrime = 2;
+    while (aPrimeArray.length !== nNPrimeIndex) {
+        
+    }
 }
