@@ -4,18 +4,13 @@
 let primeArray = [2,3,5,7,11];
 let NPrimeIndex = 10;
 
+let numberToParse = 12;
 
 function parsePrimes () {
     while (primeArray.length !== NPrimeIndex){
-        let numberToParse = 12;
-        for (i=2 ; i < numberToParse ; i++) {
-            if (numberToParse%i === 0) {
-                //...
-            } else if (i == numberToParse) {
-                //...
-            }
-        }
+        
     }
 }
 
+parsePrimes();
 console.log(primeArray);
