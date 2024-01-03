@@ -72,41 +72,54 @@ const gridArr = [
 const miniGridArr = [
     [5,7,2,8],
     [6,9,0,2],
-    [4,1,"papita",6],
+    [4,1,5,6],
     [3,7,3,8]
 ]
 
-// function checkAndReduce (accumulator, currentValue, index, arr) {
-//     let valorAProcesar = currentValue;
-//     console.log(`${valorAProcesar}`)
-//     if (valorAProcesar[index - 3]){
-//         console.log(currentValue[index - 3]);
-//     } else {
-//         console.log(`No mi ciela...${currentValue[index - 3]} no existe`);
-//     }
-// }
+let total = 0;
+let mayorQueTodos = 0;
 
-// checkAndReduce()
+function deNuevoDesdeCero (arr) {
+    for (i=0; i < arr.length ; i ++ ) {
+        for (j=0; j < arr[i].length ; j++){
 
-function ExistenceCheck (arr) {
-    for (element of arr) {
-        let elSeniorIndex = arr.indexOf(element);
-        let valorFalseyOrTruthy = elSeniorIndex - 2
-        console.log(`estoy viendo esto: ${valorFalseyOrTruthy}`);
-        if (valorFalseyOrTruthy > 0) {
-            console.warn(`este valor es Truthy: ${valorFalseyOrTruthy}`)
+            total = arr[i][j] * arr[i-1][j-1] * arr[i-2][j-2] * arr[i-3][j-3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i-1][j+1] * arr[i-2][j+2] * arr[i-3][j+3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i+1][j-1] * arr[i+2][j-2] * arr[i+3][j-3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i+1][j+1] * arr[i+2][j+2] * arr[i+3][j+3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i-1][j] * arr[i-2][j] * arr[i-3][j];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i+1][j] * arr[i+2][j] * arr[i+3][j];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i][j-1] * arr[i][j-2] * arr[i][j-3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            total = arr[i][j] * arr[i][j+1] * arr[i][j+2] * arr[i][j+3];
+            if (total > mayorQueTodos) {
+                mayorQueTodos = total;
+            }
+            console.log(total)
         }
-        // let valueToCheck = arr[0][0];
-        // console.log(`El valor que quiero mostrar es: ${valueToCheck}`);
     }
-};
-
-ExistenceCheck(miniGridArr)
+}
 
 
+deNuevoDesdeCero(miniGridArr)
 
-
-
-// let parseProducts() {
-//     let firstOfTheSequence = 
-// }
