@@ -79,47 +79,53 @@ const miniGridArr = [
 let total = 0;
 let mayorQueTodos = 0;
 
-function deNuevoDesdeCero (arr) {
-    for (i=0; i < arr.length ; i ++ ) {
-        for (j=0; j < arr[i].length ; j++){
-
-            total = arr[i][j] * arr[i-1][j-1] * arr[i-2][j-2] * arr[i-3][j-3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i-1][j+1] * arr[i-2][j+2] * arr[i-3][j+3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i+1][j-1] * arr[i+2][j-2] * arr[i+3][j-3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i+1][j+1] * arr[i+2][j+2] * arr[i+3][j+3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i-1][j] * arr[i-2][j] * arr[i-3][j];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i+1][j] * arr[i+2][j] * arr[i+3][j];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i][j-1] * arr[i][j-2] * arr[i][j-3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            total = arr[i][j] * arr[i][j+1] * arr[i][j+2] * arr[i][j+3];
-            if (total > mayorQueTodos) {
-                mayorQueTodos = total;
-            }
-            console.log(total)
-        }
+function compareHigher() {
+    if (total > mayorQueTodos) {
+        mayorQueTodos = total;
     }
 }
 
+function deNuevoDesdeCero (arr) {
+    for (i=0; i < arr.length ; i ++ ) {
+        for (j=0; j < arr[i].length ; j++){
+            if (arr[i-3] != undefined && arr[j-3] != undefined) {
+                total = arr[i][j] * arr[i-1][j-1] * arr[i-2][j-2] * arr[i-3][j-3];
+                compareHigher()
+            }
+            if (arr[i-3] != undefined && arr[j+3] != undefined ) {
+                total = arr[i][j] * arr[i-1][j+1] * arr[i-2][j+2] * arr[i-3][j+3];
+                compareHigher()
+            }
+            if (arr[i+3] != undefined && arr[j-3] != undefined ){
+                total = arr[i][j] * arr[i+1][j-1] * arr[i+2][j-2] * arr[i+3][j-3];
+                compareHigher()
+            }
+            if (arr[i+3] != undefined && arr[j+3] != undefined ){
+                total = arr[i][j] * arr[i+1][j+1] * arr[i+2][j+2] * arr[i+3][j+3];
+                compareHigher()
+            }
+            if (arr[i-3] != undefined){
+                total = arr[i][j] * arr[i-1][j] * arr[i-2][j] * arr[i-3][j];
+                compareHigher()
+            }
+            if (arr[i+3] != undefined){
+                total = arr[i][j] * arr[i+1][j] * arr[i+2][j] * arr[i+3][j];
+                compareHigher()
+            }
+            if (arr[j-3] != undefined ){
+                total = arr[i][j] * arr[i][j-1] * arr[i][j-2] * arr[i][j-3];
+                compareHigher()
+            }
+            if (arr[j+3] != undefined ){
+                total = arr[i][j] * arr[i][j+1] * arr[i][j+2] * arr[i][j+3];
+                compareHigher()
+            }
+            
+        }
+    }
+    console.log(mayorQueTodos)
+}
 
-deNuevoDesdeCero(miniGridArr)
+
+deNuevoDesdeCero(gridArr)
 
