@@ -18,7 +18,21 @@
 
 let triangleNumbersArray = [];
 
+function factorsOfTriangleNumber(triangleNumberObj) {
+
+}
 
 function triangleNumbers () {
+    while(!factorsOfTriangleNumber) {
+        triangleNumbersArray.push()
+    }
+}
 
+function findDivisorsofTriangleNumbers() {
+    for (let i=1, fiveHundredTh , triangleNumberResult= 0; i < fiveHundredTh ; i ++) {
+        triangleNumberResult += i
+
+        
+    
+    }
 }
