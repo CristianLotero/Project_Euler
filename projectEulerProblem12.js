@@ -16,23 +16,27 @@
 
 // What is the value of the first triangle number to have over five hundred divisors?
 
-let triangleNumbersArray = [];
-
-function factorsOfTriangleNumber(triangleNumberObj) {
-
-}
-
-function triangleNumbers () {
-    while(!factorsOfTriangleNumber) {
-        triangleNumbersArray.push()
+function findDivisors(number) {
+    let divisors = [];
+    for (i=1; i <= number; i++) {
+        if (number%i===0){
+            divisors.push(i);
+        }
     }
+    return divisors;
 }
 
 function findDivisorsofTriangleNumbers() {
-    for (let i=1, fiveHundredTh , triangleNumberResult= 0; i < fiveHundredTh ; i ++) {
+    let result ;
+    for (let i=1, newArr, triangleNumberResult= 0; findDivisors.length <= 5  ; i ++) {
         triangleNumberResult += i
+        console.log(triangleNumberResult)
+        findDivisors(triangleNumberResult);
 
-        
+        result = newArr;
     
     }
+    console.log(`The ${i}th triangle number have more than 5 divisors`)
+    console.log(`The divisors are: `)
+    console.log(result)
 }
