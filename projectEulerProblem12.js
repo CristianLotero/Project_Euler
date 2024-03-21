@@ -28,15 +28,16 @@ function findDivisors(number) {
 
 function findDivisorsofTriangleNumbers() {
     let result ;
-    for (let i=1, newArr, triangleNumberResult= 0; findDivisors.length <= 5  ; i ++) {
+    let currentTriangleNumber = [];
+    for (let i=1, newArr, triangleNumberResult= 0; currentTriangleNumber.length <= 500  ; i ++) {
         triangleNumberResult += i
-        console.log(triangleNumberResult)
-        findDivisors(triangleNumberResult);
+        // console.log(triangleNumberResult)
+        currentTriangleNumber = findDivisors(triangleNumberResult);
 
-        result = newArr;
+        result = currentTriangleNumber;
     
     }
-    console.log(`The ${i}th triangle number have more than 5 divisors`)
+    console.log(`The ${i-1}th triangle number have more than 5 divisors`)
     console.log(`The divisors are: `)
     console.log(result)
 }
